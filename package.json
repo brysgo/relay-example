@@ -1,0 +1,18 @@
+{
+  "name": "relay-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "brysgo-react-scripts": "^1.0.18-2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "relay": "react-scripts relay",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "react-scripts prettier"
+  }
+}
