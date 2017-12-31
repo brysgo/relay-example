@@ -1,0 +1,4 @@
+extend type Pokemon {
+  # example of a local field
+  active: Boolean
+}

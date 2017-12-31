@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "brysgo-react-scripts": "^1.0.18-2",
+    "graphql-mask": "^0.0.10",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-relay": "^1.4.1",
+    "react-toggle": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
