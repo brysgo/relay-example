@@ -1,5 +1,7 @@
 # Relay Example
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brysgo/relay-example.svg)](https://greenkeeper.io/)
+
 This is an example of how I use relayjs, it includes the way I mix in client
 only schema. This is a work in progress, and may have mistakes because I
 wrote it without referencing the actual use cases where these patterns
