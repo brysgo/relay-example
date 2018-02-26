@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "brysgo-react-scripts": "^1.0.18-2",
-    "graphql-mask": "^0.0.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-relay": "^1.4.1",
@@ -17,5 +16,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "react-scripts prettier"
+  },
+  "devDependencies": {
+    "relay-compiler": "^1.5.0"
   }
 }

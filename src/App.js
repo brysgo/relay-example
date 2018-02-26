@@ -26,7 +26,7 @@ class App extends Component {
               <div className="App">
                 <header className="App-header">
                   <Toggle
-                    checked={props.pokemon.active}
+                    checked={props.pokemon.active || false}
                     onChange={() => {
                       commitLocalUpdate(environment, store => {
                         const record = store.get(props.pokemon.id);

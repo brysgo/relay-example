@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 8ed260e19ded124200f31f1b9b6a576d
+ * @relayHash 8cda3657d0cff17ba3a98cf33302fde2
  */
 
 /* eslint-disable */
@@ -8,13 +8,14 @@
 "use strict";
 
 /*::
-import type {ConcreteBatch} from 'relay-runtime';
+import type { ConcreteRequest } from 'relay-runtime';
+export type AppQueryVariables = {| |};
 export type AppQueryResponse = {|
   +pokemon: ?{|
-    +id: string;
-    +name: ?string;
-    +active: ?boolean;
-  |};
+    +id: string,
+    +name: ?string,
+    +active: ?boolean,
+  |},
 |};
 */
 
@@ -23,113 +24,88 @@ query AppQuery {
   pokemon(name: "Pikachu") {
     id
     name
-    active
   }
 }
 */
 
-const batch /*: ConcreteBatch*/ = {
-  fragment: {
-    argumentDefinitions: [],
-    kind: "Fragment",
-    metadata: null,
-    name: "AppQuery",
-    selections: [
+const node /*: ConcreteRequest*/ = (function() {
+  var v0 = [
       {
-        kind: "LinkedField",
-        alias: null,
-        args: [
-          {
-            kind: "Literal",
-            name: "name",
-            value: "Pikachu",
-            type: "String"
-          }
-        ],
-        concreteType: "Pokemon",
-        name: "pokemon",
-        plural: false,
-        selections: [
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "id",
-            storageKey: null
-          },
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "name",
-            storageKey: null
-          },
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "active",
-            storageKey: null
-          }
-        ],
-        storageKey: 'pokemon{"name":"Pikachu"}'
+        kind: "Literal",
+        name: "name",
+        value: "Pikachu",
+        type: "String"
       }
     ],
-    type: "Query"
-  },
-  id: null,
-  kind: "Batch",
-  metadata: {},
-  name: "AppQuery",
-  query: {
-    argumentDefinitions: [],
-    kind: "Root",
+    v1 = {
+      kind: "ScalarField",
+      alias: null,
+      name: "id",
+      args: null,
+      storageKey: null
+    },
+    v2 = {
+      kind: "ScalarField",
+      alias: null,
+      name: "name",
+      args: null,
+      storageKey: null
+    };
+  return {
+    kind: "Request",
+    operationKind: "query",
     name: "AppQuery",
-    operation: "query",
-    selections: [
-      {
-        kind: "LinkedField",
-        alias: null,
-        args: [
-          {
-            kind: "Literal",
-            name: "name",
-            value: "Pikachu",
-            type: "String"
-          }
-        ],
-        concreteType: "Pokemon",
-        name: "pokemon",
-        plural: false,
-        selections: [
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "id",
-            storageKey: null
-          },
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "name",
-            storageKey: null
-          },
-          {
-            kind: "ScalarField",
-            alias: null,
-            args: null,
-            name: "active",
-            storageKey: null
-          }
-        ],
-        storageKey: 'pokemon{"name":"Pikachu"}'
-      }
-    ]
-  },
-  text:
-    'query AppQuery {\n  pokemon(name: "Pikachu") {\n    id\n    name\n    active\n  }\n}\n'
-};
-
-module.exports = batch;
+    id: null,
+    text:
+      'query AppQuery {\n  pokemon(name: "Pikachu") {\n    id\n    name\n  }\n}\n',
+    metadata: {},
+    fragment: {
+      kind: "Fragment",
+      name: "AppQuery",
+      type: "Query",
+      metadata: null,
+      argumentDefinitions: [],
+      selections: [
+        {
+          kind: "LinkedField",
+          alias: null,
+          name: "pokemon",
+          storageKey: 'pokemon(name:"Pikachu")',
+          args: v0,
+          concreteType: "Pokemon",
+          plural: false,
+          selections: [
+            v1,
+            v2,
+            {
+              kind: "ScalarField",
+              alias: null,
+              name: "active",
+              args: null,
+              storageKey: null
+            }
+          ]
+        }
+      ]
+    },
+    operation: {
+      kind: "Operation",
+      name: "AppQuery",
+      argumentDefinitions: [],
+      selections: [
+        {
+          kind: "LinkedField",
+          alias: null,
+          name: "pokemon",
+          storageKey: 'pokemon(name:"Pikachu")',
+          args: v0,
+          concreteType: "Pokemon",
+          plural: false,
+          selections: [v1, v2]
+        }
+      ]
+    }
+  };
+})();
+node /*: any*/.hash = "c62af48a74342b4414afebe1673758ef";
+module.exports = node;

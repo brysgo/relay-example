@@ -1,11 +1,6 @@
 import { Environment, Network, RecordSource, Store } from "relay-runtime";
-import graphqlMask from "graphql-mask";
-import remoteSchemaUrl from "schema.graphql";
-
-let remoteSchemaReq = fetch(remoteSchemaUrl).then(res => res.text());
 
 async function fetchQuery(operation, variables, cacheConfig, uploadables) {
-  const remoteSchema = await remoteSchemaReq;
   return fetch("https://graphql-pokemon.now.sh/", {
     method: "POST",
     headers: {
@@ -13,7 +8,7 @@ async function fetchQuery(operation, variables, cacheConfig, uploadables) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      query: graphqlMask(remoteSchema, operation.text), // TODO: Add validation or switch to use graphql-gateway
+      query: operation.text,
       variables
     })
   }).then(response => {
