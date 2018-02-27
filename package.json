@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "brysgo-react-scripts": "^1.0.18-2",
+    "brysgo-react-scripts": "1.1.0-2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-relay": "^1.4.1",
