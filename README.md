@@ -13,16 +13,12 @@ Run it with:
 
     yarn start
 
-Some differences you may notice:
+To run the relay compiler, use:
 
     yarn relay
 
-Will run the relay-compiler. It will also mix in your
-`src/clientExtensions.graphql` in for you.
-
-That is the file you will use to declare the additional types and fields you
-want to only use locally. These extra fields you add will be filtered out in
-the network layer by `graphql-mask` via `graphql-gateway`.
+Graphql files in the src directory get loaded for client only use, as you see
+in `src/clientExtensions.graphql`.
 
 You can also run `yarn relay -u <api-url>` to have it grab the remote schema
 and pull it down for you.
